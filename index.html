@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <title>What IS Jason?</title>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.3/jquery.fitvids.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+
+      // react to tab clicks to change background
+      $('a[data-toggle="tab"]').on('click', function(e) {
+        var target = $(e.target).attr('href');
+        var image = ({
+          perspective : "http://i.imgur.com/64Uql.jpg",
+          nous : "http://whatisnous.com/Nous1.png",
+          sonar : "http://i.imgur.com/E1MSseN.png",
+          yfront : "http://games.digipen.edu/system/photos/687/original/YFront_1.jpg",
+          barry : "http://games.digipen.edu/system/photos/145/original/Barry2.jpg",
+        })[target.substr(1)];
+
+        if (image)
+        {
+          $("body").css("background-image", "url(" + image + ")");
+        }
+        else
+        {
+          console.log("no target bg image: " + target);
+        }
+      });
+
+      // click the tab when links to tab are clicked
+      $("a[href^=#]:not([data-toggle])").click(function(e){
+        var href = $(e.currentTarget).attr("href");
+        $("a[href=" + href + "][data-toggle]").click();
+      });
+
+      // fit youtube vids
+      $("body").fitVids();
+
+    });
+  </script>
+  <style>
+
+    .opaque {
+      background: rgba(255,255,255,0.9);
+      border-radius: 4px;
+      padding: 4px 16px;
+    }
+
+    .nice-pill {
+      background: rgba(64,64,64,0.75);
+      margin-right: 2px;
+    }
+
+    .nice-pill:hover, .nice-pill.open>a {
+      color: #000;
+    }
+
+    .container {
+      max-width: 60em;
+    }
+
+    body {
+      background: url(http://i.imgur.com/64Uql.jpg) no-repeat center top fixed;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      transition: background 0.5s linear;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header" style="border-bottom: 0px solid #000;">
+      <div class="opaque" style="display: inline-block;">
+        <h1>Jason Meisel</h1>
+
+        <p>Programmer, Game Designer, and Person</p>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills">
+      <li class="active nice-pill"><a data-toggle="tab" href="#aboutme">About Me</a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle nice-pill" data-toggle="dropdown" href="#">Big Games <span class="caret"></span></a>
+
+        <ul class="dropdown-menu">
+          <li><a href="http://store.steampowered.com/app/390330/">Mekazoo</a></li>
+
+          <li><a data-toggle="tab" href="#perspective">Perspective</a></li>
+
+          <li><a data-toggle="tab" href="#nous">Nous</a></li>
+
+          <li><a data-toggle="tab" href="#sonar">SONAR</a></li>
+
+          <li><a data-toggle="tab" href="#yfront">The Y-Front</a></li>
+
+          <li><a data-toggle="tab" href="#barry">DigiPen Ball-Stars</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle nice-pill" data-toggle="dropdown" href="#">Small Games <span class="caret"></span></a>
+
+        <ul class="dropdown-menu">
+          <li><a href="/hindsight/WebPlayer.html">Hindsight</a></li>
+
+          <li><a href="https://whatisjason.itch.io/do-anything">Do Anything</a></li>
+
+          <li><a href="https://whatisjason.itch.io/danny-dorito-the-revenge-of-chester-cheeto-4">Danny Dorito: The Revenge of Chester Cheeto 4</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="tab-content opaque" style="margin-top: 2em;">
+      <div class="tab-pane active" id="aboutme">
+        <p>Hello there! Thanks for checking out my portfolio. I'm Jason Meisel, and I love to make games. I've been programming as a hobby all my life, but in 2009 I took it to the next level at <a href="http://www.digipen.edu">DigiPen Institute of Technology</a>. There I found that game development was my true calling, and created award-winning student games <a href="#nous">year</a> after <a href="#perspective">year</a>.</p>
+
+        <p>Having just shipped <a href="http://store.steampowered.com/app/390330/">Mekazoo</a> on Xbox One, PS4, and Steam, I'm looking for the next step in my game development life. I have a strong passion for creating new experiences for players, especially those that challenge existing notions of what games are capable of.</p>
+
+        <p>Please, take a look at my work. If you like what you see, shoot me an <a href="mailto:jason.meisel@gmail.com">email</a>. You can also twit me on the Twitters <a href="https://twitter.com/jasonmeisel">@jasonmeisel</a>, link me at the <a href="http://www.linkedin.com/pub/jason-meisel/17/aa4/195/">LinkedIns</a>, or look at my boring <a href="/jason-meisel-resume.pdf">resume</a>.</p>
+      </div>
+
+      <div class="tab-pane" id="perspective">
+        <h2>Perspective</h2>
+
+        <p><iframe class="center-block" frameborder="0" height="360" src="http://www.youtube.com/embed/EW4APeAqFPw?rel=0" width="640"></iframe></p>
+
+        <p><a href="http://seewithperspective.com">Perspective</a> is an experimental game combining a first-person puzzler with a 2D platformer. This was my Junior project at DigiPen, but was worked on into my Senior year as well. I was formally the <strong>Design Lead</strong> and <strong>Gameplay Programmer</strong> on this project.</p>
+
+        <h3>My Responsibilities</h3>
+
+        <ul>
+          <li>Designing the <strong>feel, experience, and flow</strong> of the game and working with a level designer, a musician, and a team of artists to implement them</li>
+
+          <li>Playtesting the game and responding to user feedback</li>
+
+          <li>Creating the <strong>DirectX 11 graphics engine</strong> to allow for rapid art iteration</li>
+
+          <li>Writing many different shaders to help iterate on the art style</li>
+
+          <li>Assisting with the design and coding of the game's <strong>editor</strong>, built with WXWidgets</li>
+
+          <li>Implementation of all gameplay code, as well as much of the UI</li>
+
+          <li>Assisting with the <strong>general production</strong> of the game by managing the team's wants and capabilities, seeking out feedback of experienced developers, and creating trailers and other press materials</li>
+        </ul>
+
+        <h3>Honors</h3>
+
+        <ul>
+          <li><em>DigiPen Game Awards 2012</em> - Most Innovative Design, Best Physics, Best 3D Visual Design, Best Junior Technology, Best Junior Game, DigiPen Game of the Year</li>
+
+          <li><em>Independent Games Festival 2013</em> - Finalist for Technical Excellence</li>
+
+          <li><em>Game Developers Conference 2013</em> - Experimental Gameplay Showcase</li>
+
+          <li><em>Develop Conference Indie Showcase 2012</em> - Showcase</li>
+
+          <li><em>Brazilian International Game Festival</em> - Finalist for Best Gameplay</li>
+
+          <li><em>hoPLAY Festival 2012</em> - Finalist</li>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="nous">
+        <h2>Nous</h2>
+
+        <p><iframe class="center-block" frameborder="0" height="360" src="http://www.youtube.com/embed/dCyTjrxnY7Y?rel=0" width="640"></iframe></p>
+
+        <p><a href="http://whatisnous.com">Nous</a> is a 2D free-flowing action game developed by the team Awesome Shark Volcano. It was my sophomore year game project at DigiPen Institute of Technology and was developed from May 2010 to September 2011.</p>
+
+        <h3>My Responsibilities</h3>
+
+        <ul>
+          <li>Creating a <strong>3D graphics engine</strong> using DirectX with deferred lighting, normal maps, texture atlasing, depth sorting and billboarding for sprites, text rendering, and an extensible particle system</li>
+
+          <li>Creating <strong>graphical effects</strong> in HLSL including meta-balls, edge lighting, motion blur, desaturation, pixelization, radial pixelization, 2 types of distortion, bloom, pixelized explosions, and 3 types of “screen glitching”</li>
+
+          <li>Brainstorming, designing, and implementing game concept prototypes</li>
+
+          <li>Integrating, extending, and bug-fixing the UI library (originally using CEGUI, then switching to Gwen)</li>
+
+          <li>Integrating the Audio library (FMOD Ex)</li>
+
+          <li>Creating 3D art content</li>
+
+          <li>Creating game logic scripts in Lua</li>
+
+          <li>Designing and implementing the boss chase level</li>
+
+          <li>Implementing screen capture facilities</li>
+        </ul>
+
+        <h3>Honors</h3>
+
+        <ul>
+          <li><em>Independent Games Festival 2012</em> - Student Showcase</li>
+
+          <li><em>DigiPen Game Awards 2011</em> - Best Sophomore Technology</li>
+
+          <li><em>PC Gamer</em> - #2 Free PC Game of 2011</li>
+
+          <li><em>Toronto After Darkcade 2012</em> - Showcase</li>
+
+          <li><em>Brazil International Game Festival</em> - Finalist for Best Best Sound, Best Narrative</li>
+
+          <li><em>FILE Festival 2012</em> - Showcase</li>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="sonar">
+        <h2>SONAR</h2>
+
+        <p><a href="http://sonargame.com">SONAR</a> is a 1940′s spy comic book stealth/action/puzzle papercraft game with visible sound waves in a web browser. It is the first full commercial game made from the ground up with WebGL. SONAR marks my first commercial game project. It was independently developed by Subsonic LLC: a company formed by myself and three other developers. It was created from scratch by a small team of 3 programmers, 1 designer, and 2 artists in just 3 months. It was written in Javascript and used the (at the time experimental) WebGL API for rendering the graphics.</p>
+
+        <h3>My Responsibilities</h3>
+
+        <ul>
+          <li>Creating a <strong>3D graphics engine</strong> using WebGL with bone animation, phong lighting, a custom pipeline from Blender, glass rendering with screen-space reflections, specialized wall rendering, and optimized environment rendering</li>
+
+          <li>Creating a <strong>2D physics engine</strong> with support for tile-based environments, circular rigid bodies, dynamic particles, collision detection and resolution, and raycasting Working with artists to improve the art pipeline</li>
+
+          <li>Implementing <strong>gameplay code</strong> such as the character controller, weapons, power-ups, and more</li>
+
+          <li>Creating and optimizing UI elements including tutorial text, subtitles, and achievement pop-ups</li>
+        </ul>
+
+        <h3>Honors</h3>
+
+        <ul>
+          <li><em>New Game Conference 2011</em> - Presented "<a href="https://www.youtube.com/watch?v=ABozd7kh8qE">SONAR: WebGL, JavaScript, and Gaming</a>"</li>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="yfront">
+        <h2>The Y-Front</h2>
+
+        <p><iframe class="center-block" frameborder="0" height="360" src="http://www.youtube.com/embed/QtPrtNMAtrI?rel=0" width="640"></iframe></p>
+
+        <p><a href="https://games.digipen.edu/games/the-y-front">The Y-Front</a> is a 3D forward-scrolling shooter rendered completely in the Windows Command Prompt. It was created as my second semester Freshman game project from January to April 2010 at DigiPen Institute of Technology.</p>
+
+        <h3>My Responsibilities</h3>
+
+        <ul>
+          <li>Scheduling the team’s tasks over the course of the project</li>
+
+          <li>Writing the Technical Design Document</li>
+
+          <li>Creating the core game engine Creating a 3D math library</li>
+
+          <li>Creating a 3D rasterizer Creating data structures (dynamic array, hash table, linked list, binary tree)</li>
+
+          <li>Creating a gameplay behavior system</li>
+
+          <li>Creating a 3D level editor (based in Blender)</li>
+
+          <li>Creating the high score system</li>
+
+          <li>Designing and implementing all the game logic (character controller, levels, bosses, etc.)</li>
+        </ul>
+
+        <h3>Honors</h3>
+
+        <ul>
+          <li><em>DigiPen Game Awards 2010</em> - Best Freshman Technology, Best Freshman Game</li>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="barry">
+        <h2>Barry's Magical Escape: DigiPen Ball-Stars Edition</h2>
+
+        <p><iframe class="center-block" frameborder="0" height="360" src="http://www.youtube.com/embed/eglVJs32ClQ?rel=0" width="640"></iframe></p>
+
+        <p><a href="http://digipenballstars.tk/">Barry's Magical Escape: DigiPen Ball-Stars Edition</a> is a tribute to DigiPen's wonderful collection of games over the years. It builds on the gameplay of the Bumper Balls minigame from Mario Party. It was built in Unity during my final semester at DigiPen.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
